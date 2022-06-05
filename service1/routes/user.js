@@ -31,6 +31,10 @@ app.post("/sign-in", apiTokenMiddleware, (req, res) => {
     })
 });
 
+app.get("/validate", authMiddleware, (req, res) => {
+    return res.status(200).send({status: true, id: req.content.id});
+});
+
 app.post("/login", apiTokenMiddleware, (req, res) => {
     const us = req.body.user
     const ps = req.body.password

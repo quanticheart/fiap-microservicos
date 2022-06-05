@@ -111,7 +111,7 @@
 					"response": []
 				},
 				{
-					"name": "Mudar senha",
+					"name": "Mudar Senha",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -141,6 +141,45 @@
 							],
 							"path": [
 								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "token",
+								"value": "{{user-token}}",
+								"type": "text"
+							},
+							{
+								"key": "api_token",
+								"value": "{{api-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}user/validate",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"validate"
 							]
 						}
 					},
